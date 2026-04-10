@@ -8,7 +8,12 @@ def main():
     print(carte.points())
 
     paquet = Paquet()
-    print(paquet)
+    paquet.shuffle()
+    paquet.cut()
+    carte_piochee = paquet.piocher()
+    print(carte_piochee)
+    print(carte_piochee.points())
+    
 
 
 
