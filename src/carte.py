@@ -35,7 +35,7 @@ class Carte:
             case _:
                     valeur_affichee = str(self.valeur.value)
             
-        return f"Carte {valeur_affichee} de {self.couleur.value}"
+        return f"<Carte {valeur_affichee} de {self.couleur.value}>"
     
     def points(self):
         return self.valeur.value
