@@ -14,7 +14,7 @@ class Paquet:
         random.shuffle(self.cartes)
 
     def cut(self):
-        nb_aleatoire = random.choice([1, 50])
+        nb_aleatoire = random.randint(1, 50)
         carte_coupee = self.cartes[:nb_aleatoire]
         self.cartes = self.cartes[nb_aleatoire:] + carte_coupee
 
