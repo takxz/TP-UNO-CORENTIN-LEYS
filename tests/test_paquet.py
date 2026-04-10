@@ -1,5 +1,5 @@
 from src.paquet import Paquet
-
+from pytest import raises
 
 def test_initialisation():
     paquet = Paquet()
@@ -40,3 +40,16 @@ def test_piocher():
     carte_piochee2 = paquet2.piocher()
     assert repr(carte_piochee2) != "Carte AS de COEUR"
     assert len(paquet2.cartes) == 51
+
+
+def test_distribuer():
+    paquet = Paquet()
+    mains = paquet.distribuer(5, 4)
+    assert len(mains) == 4
+    for main in mains:
+        assert len(main) == 5
+    assert len(paquet.cartes) == 52 - 5 * 4
+
+    paquet2 = Paquet()
+    with raises(ValueError):
+        paquet2.distribuer(10, 6)

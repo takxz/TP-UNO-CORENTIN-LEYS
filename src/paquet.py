@@ -21,3 +21,15 @@ class Paquet:
     def piocher(self):
         x = self.cartes.pop(0)
         return x
+    
+    def distribuer(self, nb_cartes, nb_joueurs):
+        if nb_cartes * nb_joueurs > len(self.cartes):
+            raise ValueError("Pas assez de cartes pour distribuer")
+        main_joueurs = []
+        for _ in range(nb_joueurs):
+            main = []
+            for _ in range(nb_cartes):
+                main.append(self.piocher())
+            main_joueurs.append(main)
+        return main_joueurs
+        
