@@ -22,3 +22,9 @@ def test_shuffle():
     cartes_avant_shuffle = paquet.cartes.copy()
     paquet.shuffle()
     assert paquet.cartes != cartes_avant_shuffle
+
+def test_cut():
+    paquet = Paquet()
+    cartes_avant_cut = paquet.cartes.copy()
+    paquet.cut()
+    assert paquet.cartes != cartes_avant_cut
