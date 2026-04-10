@@ -2,6 +2,7 @@ from src.valeur import Valeur
 from src.couleur import Couleur
 
 class Carte:
+    #Le constructeur de la classe Carte vérifie que les arguments sont valides et les convertit en enums si nécessaire
     def __init__(self, valeur, couleur):
         if isinstance(valeur, str):
             try:
@@ -22,6 +23,7 @@ class Carte:
         self.valeur = valeur
         self.couleur = couleur
 
+    #Utilisation d'un switch pour afficher les valeurs textes des cartes
     def __repr__(self):
         match self.valeur:
             case Valeur.AS:
@@ -37,5 +39,6 @@ class Carte:
             
         return f"<Carte {valeur_affichee} de {self.couleur.value}>"
     
+    #Utilisation de la valeur de l'enum pour calculer les points de la carte
     def points(self):
         return self.valeur.value
