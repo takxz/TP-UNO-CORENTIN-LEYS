@@ -28,3 +28,15 @@ def test_cut():
     cartes_avant_cut = paquet.cartes.copy()
     paquet.cut()
     assert paquet.cartes != cartes_avant_cut
+
+def test_piocher():
+    paquet = Paquet()
+    carte_piochee = paquet.piocher()
+    assert repr(carte_piochee) == "Carte AS de COEUR"
+    assert len(paquet.cartes) == 51
+
+    paquet2 = Paquet()
+    paquet2.shuffle()
+    carte_piochee2 = paquet2.piocher()
+    assert repr(carte_piochee2) != "Carte AS de COEUR"
+    assert len(paquet2.cartes) == 51

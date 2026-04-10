@@ -17,3 +17,7 @@ class Paquet:
         nb_aleatoire = random.choice([1, 50])
         carte_coupee = self.cartes[:nb_aleatoire]
         self.cartes = self.cartes[nb_aleatoire:] + carte_coupee
+
+    def piocher(self):
+        x = self.cartes.pop(0)
+        return x
