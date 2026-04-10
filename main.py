@@ -1,7 +1,11 @@
 from src.carte import Carte
+from src.valeur import Valeur
 
 def main():
-    print(Carte(2, "PIQUE"))
+    carte = Carte("deux", "PIQUE")
+    print(carte)
+    print(carte.points())
+
 
 
 if __name__ == "__main__":
